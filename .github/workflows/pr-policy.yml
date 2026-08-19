@@ -15,7 +15,7 @@ jobs:
     steps:
       # Read policy from the trusted base commit. Do not execute code from the PR.
       - name: Check out base policy
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           persist-credentials: false
