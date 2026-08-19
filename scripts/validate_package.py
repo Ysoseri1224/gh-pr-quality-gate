@@ -28,7 +28,6 @@ def load_json(relative: str) -> dict:
 def main() -> int:
     codex = load_json("plugins/gh-pr-quality-gate/.codex-plugin/plugin.json")
     claude = load_json("plugins/gh-pr-quality-gate/.claude-plugin/plugin.json")
-    codex_market = load_json(".agents/plugins/marketplace.json")
     claude_market = load_json(".claude-plugin/marketplace.json")
 
     versions = {
@@ -44,8 +43,6 @@ def main() -> int:
         if manifest.get("license") != "MIT":
             raise AssertionError("plugin license must be MIT")
 
-    if codex_market["plugins"][0]["source"]["path"] != "./plugins/gh-pr-quality-gate":
-        raise AssertionError("Codex marketplace source path is invalid")
     if claude_market["plugins"][0]["source"] != "./plugins/gh-pr-quality-gate":
         raise AssertionError("Claude marketplace source path is invalid")
 

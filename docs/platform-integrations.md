@@ -1,11 +1,10 @@
 # Platform Integrations
 
-## Codex and ChatGPT Work
+## Codex
 
-The repository contains a Codex plugin manifest at
-`plugins/gh-pr-quality-gate/.codex-plugin/plugin.json` and a repo marketplace at
-`.agents/plugins/marketplace.json`. The plugin packages the shared Agent Skill;
-it does not add an MCP server or request access to a connected service.
+The direct installer places the shared Agent Skill under
+`~/.codex/skills/gh-pr-quality-gate`. The repository does not publish an OpenAI
+marketplace or Plugins Directory installation source.
 
 ## Claude Code
 

@@ -27,28 +27,6 @@ gh extension install .
 
 On Windows, build `gh-pr-quality-gate.exe` instead.
 
-## Codex and ChatGPT Work plugin
-
-Add the Git-backed marketplace:
-
-```shell
-codex plugin marketplace add Ysoseri1224/gh-pr-quality-gate
-codex plugin marketplace list
-```
-
-Restart the ChatGPT desktop app. Open the Plugins Directory, choose
-`Ysoseri1224 Quality Gates`, and install `gh-pr-quality-gate`.
-
-For local plugin development:
-
-```shell
-codex plugin marketplace add /absolute/path/to/gh-pr-quality-gate
-```
-
-Restart the app after local plugin changes. A workspace administrator is needed
-to publish a local plugin to a ChatGPT workspace. Public directory submission is
-a separate review process described in `docs/openai-submission.md`.
-
 ## Claude Code plugin
 
 ```shell

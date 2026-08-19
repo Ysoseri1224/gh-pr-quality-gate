@@ -7,8 +7,8 @@ contract documentation, review evidence, and explicit authority boundaries.
 The project includes:
 
 - a precompiled, cross-platform GitHub CLI extension;
-- an Agent Skill shared by Codex, ChatGPT, and Claude Code plugins;
-- Codex and Claude marketplace manifests;
+- an Agent Skill installable in Codex, Claude Code, and Gemini;
+- a Claude Code marketplace manifest;
 - repository instruction entry points for Codex, Claude, GitHub Copilot,
   Gemini, and other agents;
 - collision-safe repository templates, pre-push hooks, and GitHub Actions;
@@ -34,18 +34,7 @@ go install github.com/Ysoseri1224/gh-pr-quality-gate/cmd/gh-pr-quality-gate@late
 gh-pr-quality-gate version
 ```
 
-## Install the Agent plugin
-
-Codex and ChatGPT Work:
-
-```shell
-codex plugin marketplace add Ysoseri1224/gh-pr-quality-gate
-```
-
-Restart the ChatGPT desktop app, open the Plugins Directory, select
-`Ysoseri1224 Quality Gates`, and install `gh-pr-quality-gate`.
-
-Claude Code:
+## Install the Claude Code plugin
 
 ```shell
 claude plugin marketplace add Ysoseri1224/gh-pr-quality-gate
