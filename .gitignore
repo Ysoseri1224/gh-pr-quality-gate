@@ -1,0 +1,7 @@
+/bin/
+/dist/
+/gh-pr-quality-gate
+*.exe
+*.test
+coverage.out
+.DS_Store

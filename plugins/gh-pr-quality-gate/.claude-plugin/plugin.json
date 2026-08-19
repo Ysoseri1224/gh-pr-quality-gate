@@ -1,0 +1,13 @@
+{
+  "name": "gh-pr-quality-gate",
+  "description": "Audit and install repository-specific pull request quality gates without granting agents merge authority.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ysoseri1224",
+    "url": "https://github.com/Ysoseri1224"
+  },
+  "homepage": "https://github.com/Ysoseri1224/gh-pr-quality-gate",
+  "repository": "https://github.com/Ysoseri1224/gh-pr-quality-gate",
+  "license": "MIT",
+  "keywords": ["github", "pull-request", "quality-gate", "agents", "governance"]
+}

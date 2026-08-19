@@ -1,0 +1,30 @@
+{
+  "name": "gh-pr-quality-gate",
+  "version": "0.1.0",
+  "description": "Audit and install repository-specific pull request quality gates without granting agents merge authority.",
+  "author": {
+    "name": "Ysoseri1224",
+    "url": "https://github.com/Ysoseri1224"
+  },
+  "homepage": "https://github.com/Ysoseri1224/gh-pr-quality-gate",
+  "repository": "https://github.com/Ysoseri1224/gh-pr-quality-gate",
+  "license": "MIT",
+  "keywords": ["github", "pull-request", "quality-gate", "agents", "governance"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GitHub PR Quality Gate",
+    "shortDescription": "Audit and install safe pull request quality gates.",
+    "longDescription": "Inspect repository policy, install cross-agent instructions and CI templates without overwriting existing files, validate issue linkage and local checks, and prepare branch protection changes behind explicit confirmation.",
+    "developerName": "Ysoseri1224",
+    "category": "DeveloperTools",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://github.com/Ysoseri1224/gh-pr-quality-gate",
+    "privacyPolicyURL": "https://github.com/Ysoseri1224/gh-pr-quality-gate/blob/main/docs/privacy.md",
+    "termsOfServiceURL": "https://github.com/Ysoseri1224/gh-pr-quality-gate/blob/main/docs/terms.md",
+    "defaultPrompt": [
+      "Audit this repository's pull request quality gates.",
+      "Install safe PR governance files without overwriting existing policy.",
+      "Validate this pull request before I push it."
+    ]
+  }
+}

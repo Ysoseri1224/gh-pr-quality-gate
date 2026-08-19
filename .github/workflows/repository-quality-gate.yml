@@ -1,0 +1,21 @@
+name: Repository quality gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Repository quality gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out candidate code
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Run repository-defined checks
+        run: go run ./cmd/gh-pr-quality-gate validate --run-local

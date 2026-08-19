@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub PR Quality Gate"
+  short_description: "Audit and install safe pull request quality gates"
+  default_prompt: "Use $gh-pr-quality-gate to audit this repository and propose safe pull request quality gates."

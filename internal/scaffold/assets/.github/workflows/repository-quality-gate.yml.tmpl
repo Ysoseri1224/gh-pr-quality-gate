@@ -1,0 +1,25 @@
+name: Repository quality gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Repository quality gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out candidate code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install quality gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh extension install Ysoseri1224/gh-pr-quality-gate --pin v0.1.0
+      - name: Run repository-defined checks
+        run: gh pr-quality-gate validate --run-local

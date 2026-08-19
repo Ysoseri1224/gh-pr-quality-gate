@@ -1,0 +1,31 @@
+name: PR policy
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  policy:
+    name: PR policy
+    runs-on: ubuntu-latest
+    steps:
+      # Read policy from the trusted base commit. Do not execute code from the PR.
+      - name: Check out base policy
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - name: Install quality gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh extension install Ysoseri1224/gh-pr-quality-gate --pin v0.1.0
+      - name: Capture pull request body
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python -c "import os, pathlib; pathlib.Path('/tmp/pr-body.txt').write_text(os.environ.get('PR_BODY', ''), encoding='utf-8')"
+      - name: Validate pull request policy
+        run: gh pr-quality-gate validate --pr-body-file /tmp/pr-body.txt

@@ -1,0 +1,44 @@
+version: 1
+
+local_gate:
+  windows:
+    - go test ./...
+    - go vet ./...
+    - python scripts/validate_package.py
+  posix:
+    - go test ./...
+    - go vet ./...
+    - python3 scripts/validate_package.py
+
+required_checks:
+  - Repository quality gate
+  - PR policy
+
+required_files:
+  - AGENTS.md
+  - docs/repo_rule.md
+  - .github/pull_request_template.md
+  - .github/workflows/pr-policy.yml
+  - .github/workflows/repository-quality-gate.yml
+  - .github/workflows/ci.yml
+  - .github/workflows/release.yml
+  - plugins/gh-pr-quality-gate/.codex-plugin/plugin.json
+  - plugins/gh-pr-quality-gate/.claude-plugin/plugin.json
+  - LICENSE
+
+issue_reference:
+  required: true
+  allow_partial_refs: true
+
+agent_authority:
+  merge: explicit-authorisation
+  draft_transition: explicit-authorisation
+  force_push: prohibited
+
+branch_protection:
+  branch: main
+  required_approvals: 1
+  dismiss_stale_reviews: true
+  require_last_push_approval: true
+  require_conversation_resolution: true
+  enforce_admins: true
